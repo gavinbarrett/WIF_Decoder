@@ -7,4 +7,4 @@ The core Base58 decoder is tested against test vectors sourced from the [Base58 
 
 This library is tested against a single test vector sourced from [the WIF docs.](https://en.bitcoin.it/wiki/Wallet_import_format)
 
-![](https://github.com/gavinbarrett/WIF_Decoder/workflows/Base58Decoding/badge.svg)
+![](https://github.com/gavinbarrett/WIF_Decoder/workflows/Base58%20Decoding/badge.svg)
