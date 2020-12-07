@@ -1,5 +1,3 @@
-from binascii import hexlify
-
 # base58 alphabet
 alphabet = {
 	'1':0,'2':1,'3':2,'4':3,
@@ -26,15 +24,14 @@ def b58decode_bytes(string):
 		carry = (carry * 58) + alphabet[char]
 	return carry
 
-def b58decode(string):
+def b58checkdecode(string):
 	length = len(string)
 	acc = b58decode_bytes(string)
-
 	decoded = []
 	while acc > 0:
 		acc, mod = divmod(acc, 256)
 		decoded.append(mod)
-	return strip_bytes(hexlify(bytes(reversed(decoded)))).decode()
+	return bytes(reversed(decoded))
 
 def strip_bytes(byte_string):
 	# strip the first and last four bytes from the buffer
@@ -44,7 +41,8 @@ def strip_bytes(byte_string):
 		return byte_string[:-2]
 	return byte_string
 
-input_bytes = '111233QC4'
+def inp():
+	print('please enter a num')
 
-b = b58decode(input_bytes)
-print(b)
+if __name__ == "__main__":
+	inp()
